@@ -36,17 +36,18 @@ title7="sunday is fun day"
 
 if [ "$today" = "Monday" ]
 then 
-cat <<EOF
+display=$(cat <<EOF
 Welcome to planet $hostname, $title3 $USER
 It is $currenttime on $weekday
 EOF
+)
 elif [ "$today" = "Tuesday" ]
 then
-cat <<EOF
+display=$(cat <<EOF
 Welcome to planet $hostname, $title $USER
 It is $currenttime on $weekday
 EOF
-
+)
 elif [ "$today" = "Wednesday" ]
 then 
 cat <<EOF
@@ -84,5 +85,9 @@ EOF
 
 
 fi
+cat <<EOF
 
+$(cowsay $display)
+
+EOF
 
